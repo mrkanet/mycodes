@@ -6,6 +6,13 @@
 
 import random
 
+def check (strin,leng): ''' Bu fonksiyon, oluşturduğunuz şifreyi kısaltabilmenizi sağlar. Bunu rastgele yapar. Bu sayede daha güvenli bir şifre üretebilirsiniz.'''   
+    ret = ""
+    while(leng != 0):
+        ret += strin[random.randrange(len(strin))]
+        leng -= 1
+    return ret
+
 print("Aşağıdaki seçeneklerden istediklerinize \"1\", istemediklerinize \"0\" yazın.")
 
 tekrar = 1
@@ -20,6 +27,9 @@ ku = int(input("Parola küçük harf barındırsın mı?: "))
 bu = int(input("Parola büyük harf barındırsın mı?: "))
 s = int(input("Parola sayı barındırsın mı?: "))
 o = int(input("Parola özel karakter barındırsın mı?: "))
+
+
+    
 
 def kaydet(parola,indis):
     print("Parolanız programın olduğu dizine \"parola"+indis+".txt\" adı altında kaydedilecektir.")

@@ -1,5 +1,12 @@
 import random
 
+def check (strin,leng): '''This function, makes shorterthe password you have created. It makes it randomly. So yo can create safer password.'''
+    ret = ""
+    while(leng != 0):
+        ret += strin[random.randrange(len(strin))]
+        leng -= 1
+    return ret
+
 print("Plese insert \"1\" or \"0\" to the following")
 
 again = 1
