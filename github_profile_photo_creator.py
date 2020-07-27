@@ -13,7 +13,12 @@ import random
 #blok_color = (124,203,223)
 
 
+def random_color_generator():
+    r = random.randint(0,255)
+    g = random.randint(0,255)
+    b = random.randint(0,255)
 
+    return '#%02x%02x%02x' % (r,g,b)
 
 
 
@@ -27,9 +32,9 @@ def random_blok_list(size = 5):
 
 
 
-def make_image(blok_list):
-    blok_color = '#7ccbdf'
-    out_color = '#7cc5df'
+def make_image(blok_list, blok_color = '#7ccbdf', out_color = '#7cc5df'):
+    
+    
     #blok_list = [[1,0,1,0,1],[0,1,0,1,0],[1,1,1,1,1],[0,0,1,0,0],[0,1,1,1,0]]
     blok_size = 80
     im_size = (len(blok_list)+1)*80
@@ -53,19 +58,24 @@ def make_image(blok_list):
     
 
 
-
+make_image([[1,0,1,0,1],[0,1,0,1,0],[1,1,1,1,1],[0,0,1,0,0],[0,1,1,1,0]])
 
 
 bloks = []
+in_colors = []
+out_colors = []
 while(True):
-    new_blok = make_image(random_blok_list())
+    _in = random_color_generator()
+    _out = random_color_generator()
+    new_blok = make_image(random_blok_list(), _in, _out )
     if new_blok != []:
         bloks.append(new_blok)
+        in_colors.append(_in)
+        out_colors.append(_out)
     cont = input("Continue?: ")
     if cont == "1":
         break
     
-
 
 
 
