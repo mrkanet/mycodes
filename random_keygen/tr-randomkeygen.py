@@ -6,7 +6,8 @@
 
 import random
 
-def check (strin,leng): ''' Bu fonksiyon, oluşturduğunuz şifreyi kısaltabilmenizi sağlar. Bunu rastgele yapar. Bu sayede daha güvenli bir şifre üretebilirsiniz.'''   
+def check (strin,leng):
+    ''' Bu fonksiyon, oluşturduğunuz şifreyi kısaltabilmenizi sağlar. Bunu rastgele yapar. Bu sayede daha güvenli bir şifre üretebilirsiniz.'''
     ret = ""
     while(leng != 0):
         ret += strin[random.randrange(len(strin))]
